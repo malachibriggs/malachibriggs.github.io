@@ -38,8 +38,8 @@
 	  style="width:80%; max-width:1280px; height:auto; aspect-ratio:1280/720; border:0; display:block; margin:0 auto;"
 	  
 	></iframe>	
-	
-	
+	<button class="likeButtons">Like</button>
+	<span class="numLikes">0</span>
 	
 	
 	</div>
@@ -65,7 +65,23 @@
 		  frameborder="0"
 		  style="width:80%; max-width:1280px; height:auto; aspect-ratio:1280/720; border:0; display:block; margin:0 auto;"
 		></iframe>
+		<button class="likeButtons">Like</button>
+		<span class="numLikes">0</span>
+</div>
 
+<script>
+	const likeButtons = document.querySelectorAll(".likeButtons")
+	const numLikes = document.querySelectorAll(".numLikes")
 
+	for (let i=0; i<likeButtons.length; i++) {
+		likeButtons[i].addEventListener('click', function(){ Like(i) })
+	}
+
+	function Like(i) {
+		let numberLikes = parseInt(numLikes[i].innerHTML)
+		numberLikes = numberLikes + 1
+		numLikes[i].innerHTML = numberLikes	
+	}
+</script>
 
 </body>
